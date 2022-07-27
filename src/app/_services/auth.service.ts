@@ -33,7 +33,7 @@ export class AuthService {
     // Changed to network based authentication strategy.
 
     // Read more here: https://angular.io/guide/http
-    return this.http.post<any>(`http://localhost:3030/user/authenticate`, { username, password })
+    return this.http.post<any>(`http://fitnesstracking2.herokuapp.com/user/authenticate`, { username, password })
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
