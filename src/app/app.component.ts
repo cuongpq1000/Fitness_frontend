@@ -20,7 +20,10 @@ export class AppComponent {
                 ) {
     this.authService.currentUser.subscribe(x => this.currentUser = x);
     let user = JSON.parse(localStorage.getItem('currentUser'));
-    this.name = (user.firstName.substring(0,1) + user.lastName.substring(0,1)).toUpperCase();
+    if(user !== null){
+      this.name = (user.firstName.substring(0,1) + user.lastName.substring(0,1)).toUpperCase();
+    }
+
   }
 
   get isAdmin() {
