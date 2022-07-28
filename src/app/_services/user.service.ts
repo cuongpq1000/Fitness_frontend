@@ -13,23 +13,23 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-     return this.http.get<User[]>(`http://fitnesstracking2.herokuapp.com/user/allusers`);
+     return this.http.get<User[]>(`https://fitnesstracking2.herokuapp.com/user/allusers`);
   }
 
 
 
   register(user: User) {
-    return this.http.post(`http://fitnesstracking2.herokuapp.com/user/register`, user);
+    return this.http.post(`https://fitnesstracking2.herokuapp.com/user/register`, user);
   }
   setGoal(calories: number, minutes: number){
     const values = {
       calories,
       minutes
     }
-    return this.http.post(`http://fitnesstracking2.herokuapp.com/user/setgoals`, values);
+    return this.http.post(`https://fitnesstracking2.herokuapp.com/user/setgoals`, values);
   }
 
   getGoal(res: User){
-    return this.http.get<User>(`http://fitnesstracking2.herokuapp.com/user/getgoals/${res}`);
+    return this.http.get<User>(`https://fitnesstracking2.herokuapp.com/user/getgoals/${res}`);
   }
 }

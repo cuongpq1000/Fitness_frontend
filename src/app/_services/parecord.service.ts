@@ -15,20 +15,20 @@ export class PArecordService {
   constructor(private http: HttpClient, private auth: AuthService, private edit: EditComponent) { }
 
   getMyProgress() {
-      return this.http.get<PARecord[]>(`http://fitnesstracking2.herokuapp.com/parecord/myprogress`);
+      return this.http.get<PARecord[]>(`https://fitnesstracking2.herokuapp.com/parecord/myprogress`);
   }
 
   add(parecord) {
-    return this.http.post(`http://fitnesstracking2.herokuapp.com/parecord/addparecord`, parecord);
+    return this.http.post(`https://fitnesstracking2.herokuapp.com/parecord/addparecord`, parecord);
 
   }
 
   getRanking(){
-    return this.http.get<Ranking[]>(`http://fitnesstracking2.herokuapp.com/parecord/getranking`);
+    return this.http.get<Ranking[]>(`https://fitnesstracking2.herokuapp.com/parecord/getranking`);
   }
 
   delete(date: string) {
-    return this.http.delete(`http://fitnesstracking2.herokuapp.com/parecord/${date}`);
+    return this.http.delete(`https://fitnesstracking2.herokuapp.com/parecord/${date}`);
 
   }
 
